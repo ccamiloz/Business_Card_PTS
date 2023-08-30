@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Business Card</title>
+</head>
+<body>
+    <button id="businessCard" class="card">
+      <div class="row">
+        <div class="left big"><strong>Phimphone <br> Gilberry</strong></div>
+        <div class="right">
+          <p><span class="big">B</span>usiness<span class="big">O</span>wner</p>
+          <div class="infoContact">
+            <div class="infoTel">
+              <a id="whatsapp-link" href="https://wa.me/15402877004" target="_blank">
+                <span class="tell">+1 540-287-7004</span>
+                <span class="icon"><i class="fab fa-whatsapp"></i></span>
+              </a>
+            </div>
+            <div class="infoEmail">
+              <a id="email-link" href="mailto:info@passiontravelservices.com">
+                <span class="small">info@passiontravelservices.com</span>
+                <span class="icon"><i class="far fa-envelope"></i></span>
+              </a>
+            </div>
+            <div class="infoPagina">
+              <a id="web-link" href="https://www.passiontravelservices.com/" target="_blank">
+                <span class="">https://www.passiontravelservices.com/</span>
+                <span class="icon"><i class="fas fa-globe"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+    <script>
+      const card = document.getElementById('businessCard');
+      const links = document.querySelectorAll('.infoContact a');
+      let isCardOpen = false;
+
+      card.addEventListener('click', () => {
+        if (!isCardOpen) {
+          isCardOpen = true;
+          card.classList.add('open');
+        }
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', (event) => {
+          event.stopPropagation();
+        });
+      });
+    </script>
+  </body>
+</html>
